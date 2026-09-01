@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Meets G-Class | 3D Interactive Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="webgl-container"></div>
+
+  <header class="navbar">
+    <div class="brand-logo">MERCEDES-BENZ</div>
+    <nav class="nav-links">
+      <a href="#hero-section">Overview</a>
+      <a href="#suspension-section">Dynamics</a>
+      <a href="#terrain-section">Terrain</a>
+      <a href="#specs-section">Specs</a>
+    </nav>
+    <button class="cta-button">Inquire Now</button>
+  </header>
+
+  <main id="smooth-scroll-content">
+    <section class="scroll-section" id="hero-section">
+      <div class="content-wrapper left-aligned">
+        <span class="sub-badge">THE OFF-ROAD BENCHMARK</span>
+        <h1 class="headline">LUXURY MEETS<br>G-CLASS</h1>
+        <p class="description">
+          Engineered to dominate extreme topographical inclines while delivering uncompromising bespoke luxury and unmistakable presence.
+        </p>
+        <div class="action-row">
+          <a href="#suspension-section" class="primary-link">Discover Engineering &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-section" id="suspension-section">
+      <div class="feature-card callout-left" id="card-suspension-front">
+        <div class="card-indicator"></div>
+        <div class="card-content">
+          <h3>SUSPENSION CONTROL</h3>
+          <p>Independent double-wishbone front axle design delivering precision steering kinematics across severe vertical articulation.</p>
+        </div>
+      </div>
+
+      <div class="feature-card callout-right" id="card-suspension-rear">
+        <div class="card-indicator"></div>
+        <div class="card-content">
+          <h3>DYNAMIC CONTINUITY</h3>
+          <p>Electronically controlled adaptive damping actively counters pitch and roll variations under steep gradient ascent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-section" id="terrain-section">
+      <div class="content-wrapper right-aligned">
+        <span class="sub-badge">TOPOGRAPHICAL MASTERY</span>
+        <h2 class="headline-secondary">UNYIELDING<br>GRADIENTS</h2>
+        <p class="description">
+          Equipped with 100% climbing capability and triple electromechanical differential locks, the vehicle transforms severe rock inclines into stable ascents.
+        </p>
+      </div>
+    </section>
+
+    <section class="scroll-section" id="specs-section">
+      <div class="specs-grid">
+        <div class="spec-node">
+          <span class="spec-value">4.0L</span>
+          <span class="spec-label">V8 Biturbo Engine</span>
+        </div>
+        <div class="spec-node">
+          <span class="spec-value">577 hp</span>
+          <span class="spec-label">Total Output</span>
+        </div>
+        <div class="spec-node">
+          <span class="spec-value">627 lb-ft</span>
+          <span class="spec-label">Peak Torque</span>
+        </div>
+        <div class="spec-node">
+          <span class="spec-value">100%</span>
+          <span class="spec-label">Gradeability</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mercedes-Benz AG. Engineering Showcase.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal Notice</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
