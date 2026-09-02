@@ -3,7 +3,7 @@
   --text-primary: #ffffff;
   --text-secondary: #8e959e;
   --accent-silver: #d1d5db;
-  --card-bg: rgba(18, 21, 25, 0.72);
+  --card-bg: rgba(18, 21, 25, 0.78);
   --card-border: rgba(255, 255, 255, 0.12);
   --font-serif: 'Cinzel', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -23,6 +23,7 @@ html, body {
   width: 100%;
 }
 
+/* Fixed 3D Canvas Background */
 #webgl-container {
   position: fixed;
   top: 0;
@@ -33,6 +34,51 @@ html, body {
   pointer-events: none;
 }
 
+/* Loading Overlay Screen */
+#loader-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loader-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 1.25rem;
+}
+
+#loader-screen p {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -41,16 +87,16 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.75rem 4rem;
+  padding: 1.5rem 3.5rem;
   z-index: 100;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .brand-logo {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.25em;
   color: var(--text-primary);
@@ -62,8 +108,8 @@ html, body {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin: 0 1.25rem;
-  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0 1.2rem;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -74,7 +120,7 @@ html, body {
   background: transparent;
   color: var(--text-primary);
   border: 1px solid var(--card-border);
-  padding: 0.65rem 1.5rem;
+  padding: 0.6rem 1.4rem;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -87,6 +133,7 @@ html, body {
   color: var(--bg-dark);
 }
 
+/* Scrollable Main Container */
 #smooth-scroll-content {
   position: relative;
   z-index: 2;
@@ -99,11 +146,11 @@ html, body {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 6rem;
+  padding: 0 5rem;
 }
 
 .content-wrapper {
-  max-width: 520px;
+  max-width: 500px;
 }
 
 .left-aligned {
@@ -121,27 +168,27 @@ html, body {
   letter-spacing: 0.25em;
   color: var(--text-secondary);
   text-transform: uppercase;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .headline, .headline-secondary {
   font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1.12;
+  font-size: 3.25rem;
+  line-height: 1.15;
   font-weight: 600;
   letter-spacing: 0.04em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
 }
 
 .headline-secondary {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 .description {
   font-size: 0.95rem;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--text-secondary);
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
   font-weight: 300;
 }
 
@@ -160,9 +207,10 @@ html, body {
   opacity: 0.65;
 }
 
+/* Floating Glassmorphic Feature Cards */
 .feature-card {
   position: absolute;
-  max-width: 300px;
+  max-width: 310px;
   padding: 1.6rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -176,18 +224,23 @@ html, body {
 }
 
 .callout-left {
-  top: 28%;
-  left: 10%;
+  top: 26%;
+  left: 8%;
 }
 
 .callout-right {
   top: 48%;
-  right: 12%;
+  right: 10%;
+}
+
+#card-cockpit {
+  top: 36%;
+  right: 8%;
 }
 
 .card-indicator {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background-color: var(--text-primary);
   box-shadow: 0 0 12px #ffffff;
   border-radius: 50%;
@@ -209,13 +262,14 @@ html, body {
   font-weight: 300;
 }
 
+/* Specifications Grid */
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  gap: 2rem;
   width: 100%;
   background: var(--card-bg);
-  padding: 3.5rem;
+  padding: 3rem;
   border: 1px solid var(--card-border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -230,7 +284,7 @@ html, body {
 
 .spec-value {
   font-family: var(--font-serif);
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -243,11 +297,12 @@ html, body {
   color: var(--text-secondary);
 }
 
+/* Footer */
 .site-footer {
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 3.5rem;
   background: var(--bg-dark);
 }
 
@@ -261,7 +316,7 @@ html, body {
 .legal-links a {
   color: var(--text-secondary);
   text-decoration: none;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   transition: color 0.3s ease;
 }
 
@@ -269,21 +324,33 @@ html, body {
   color: var(--text-primary);
 }
 
+/* Mobile & Tablet Responsiveness */
 @media (max-width: 960px) {
+  .navbar {
+    padding: 1.25rem 1.75rem;
+  }
+  .nav-links {
+    display: none;
+  }
   .scroll-section {
-    padding: 0 2.5rem;
+    padding: 0 2rem;
   }
   .headline {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+  .headline-secondary {
+    font-size: 2rem;
   }
   .specs-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
   }
-  .callout-left, .callout-right {
+  .feature-card {
     position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin: 1.5rem 0;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 1.2rem 0;
+    max-width: 100%;
   }
 }
