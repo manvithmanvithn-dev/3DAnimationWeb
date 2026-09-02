@@ -10,20 +10,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Fixed 3D WebGL Background Canvas -->
   <div id="webgl-container"></div>
 
+  <!-- Loading Screen while car.glb loads -->
+  <div id="loader-screen">
+    <div class="loader-spinner"></div>
+    <p>LOADING VEHICLE ASSETS...</p>
+  </div>
+
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="brand-logo">MERCEDES-BENZ</div>
     <nav class="nav-links">
       <a href="#hero-section">Overview</a>
       <a href="#suspension-section">Dynamics</a>
+      <a href="#cockpit-section">Cockpit</a>
       <a href="#terrain-section">Terrain</a>
       <a href="#specs-section">Specs</a>
     </nav>
     <button class="cta-button">Inquire Now</button>
   </header>
 
+  <!-- Scrollable Editorial Content -->
   <main id="smooth-scroll-content">
+    <!-- Section 1: Hero -->
     <section class="scroll-section" id="hero-section">
       <div class="content-wrapper left-aligned">
         <span class="sub-badge">THE OFF-ROAD BENCHMARK</span>
@@ -37,6 +48,7 @@
       </div>
     </section>
 
+    <!-- Section 2: Suspension & Dynamics -->
     <section class="scroll-section" id="suspension-section">
       <div class="feature-card callout-left" id="card-suspension-front">
         <div class="card-indicator"></div>
@@ -55,25 +67,46 @@
       </div>
     </section>
 
+    <!-- Section 3: Interior & Cockpit -->
+    <section class="scroll-section" id="cockpit-section">
+      <div class="content-wrapper left-aligned">
+        <span class="sub-badge">BESPOKE INTERIOR</span>
+        <h2 class="headline-secondary">HANDCRAFTED<br>PRECISION</h2>
+        <p class="description">
+          Supple Nappa leather appointments meet dual 12.3-inch widescreen displays and active multicontour seating with climate and massage functions.
+        </p>
+      </div>
+
+      <div class="feature-card callout-right" id="card-cockpit">
+        <div class="card-indicator"></div>
+        <div class="card-content">
+          <h3>MBUX OFF-ROAD COCKPIT</h3>
+          <p>Displays live gradient elevation, steering angles, tire pressures, and differential lock engagement status in real time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Terrain Capabilities -->
     <section class="scroll-section" id="terrain-section">
       <div class="content-wrapper right-aligned">
         <span class="sub-badge">TOPOGRAPHICAL MASTERY</span>
         <h2 class="headline-secondary">UNYIELDING<br>GRADIENTS</h2>
         <p class="description">
-          Equipped with 100% climbing capability and triple electromechanical differential locks, the vehicle transforms severe rock inclines into stable ascents.
+          Equipped with 100% climbing capability and three 100% differential locks, transforming severe rock ascents into predictable, effortless journeys.
         </p>
       </div>
     </section>
 
+    <!-- Section 5: Technical Specifications -->
     <section class="scroll-section" id="specs-section">
       <div class="specs-grid">
         <div class="spec-node">
           <span class="spec-value">4.0L</span>
-          <span class="spec-label">V8 Biturbo Engine</span>
+          <span class="spec-label">V8 Biturbo</span>
         </div>
         <div class="spec-node">
           <span class="spec-value">577 hp</span>
-          <span class="spec-label">Total Output</span>
+          <span class="spec-label">Total Power</span>
         </div>
         <div class="spec-node">
           <span class="spec-value">627 lb-ft</span>
@@ -87,6 +120,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-bottom">
       <p>&copy; 2026 Mercedes-Benz AG. Engineering Showcase.</p>
@@ -98,6 +132,7 @@
     </div>
   </footer>
 
+  <!-- Scripts: Three.js, GLTFLoader, GSAP, ScrollTrigger, and Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
